@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT;
+const { setupDB } = require('./db');
+
+setupDB(v => console.log(v));
 
 const func = (req, res) => {
   res.json('Success!')
