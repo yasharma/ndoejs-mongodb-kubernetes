@@ -4,20 +4,20 @@ services:
     image: local-article:3
     environment:  
       PORT: 80
-      MONGO_DB_URL: mongodb://nodejs-kubernets-mongodb:27017/nodejs-kubernets
+      MONGO_DB_URL: mongodb://nodejs-kubernetes-mongodb:27017/nodejs-kubernetes
     ports:
       - 8099:80
     depends_on:
-      - nodejs-kubernets-mongodb
+      - nodejs-kubernetes-mongodb
 
-  nodejs-kubernets-mongodb:
+  nodejs-kubernetes-mongodb:
     image: mongo:4.2
     environment:
       MONGO_DATA_DIR: /data/db
       MONGO_LOG_DIR: /dev/null
     volumes:
-      - nodejs-kubernets-mongodb-volume:/data/db
+      - nodejs-kubernetes-mongodb-volume:/data/db
     ports:
       - 23017:27017
 volumes:
-  nodejs-kubernets-mongodb-volume:
+  nodejs-kubernetes-mongodb-volume:
