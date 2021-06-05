@@ -9,7 +9,7 @@ const setupDB = callback => {
       if (err) {
         return callback(err);
       } else {
-        return callback('DB connection successful!');
+        return callback(null, 'DB connection successful!');
       }
     }
   );
